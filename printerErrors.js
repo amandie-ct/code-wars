@@ -8,14 +8,7 @@
 //  a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
 
 function printerError(s) {
-  
-    let stringArray = s.split().sort()
-    let errorCounter = 0;
-    let mIndex = stringArray.findIndexOf('m');
-    
-    console.log(`string array: ${stringArray}, mIndex: ${mIndex}`)
-  
-    return `${errorCounter}/${s.length}`
-  }
-  
-  printError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
+    let errorCounter = Array.from(s).filter(letter => letter > "m").length;
+
+    return `${errorCounter}/${s.length}`;
+}
